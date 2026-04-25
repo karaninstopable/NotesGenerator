@@ -34,12 +34,13 @@ API.interceptors.response.use(
 
 // ─── Auth ─────────────────────────────────────────────────────────────────────
 export const authAPI = {
-  register: (data) => API.post('api/auth/register', data),
-  login:    (data) => API.post('api/auth/login', data),
-  getMe:    ()     => API.get('api/auth/me'),
-  updatePassword: (data) => API.put('api/auth/password', data),
+  register: (data) => API.post('/api/auth/register', data),
+  login:    (data) => API.post('/api/auth/login', data),
+  getMe:    ()     => API.get('/api/auth/me'),
+  updatePassword: (data) => API.put('/api/auth/password', data),
 };
 
+// ─── Notes ────────────────────────────────────────────────────────────────────
 export const notesAPI = {
   getAll:     (params) => API.get('/api/notes', { params }),
   getOne:     (id)     => API.get(`/api/notes/${id}`),
@@ -51,12 +52,12 @@ export const notesAPI = {
 
 // ─── Admin Users ──────────────────────────────────────────────────────────────
 export const usersAPI = {
-  getAll:        (params) => API.get('/users', { params }),
-  getOne:        (id)     => API.get(`/users/${id}`),
-  updateRole:    (id, role) => API.put(`/users/${id}/role`, { role }),
-  toggleStatus:  (id)     => API.patch(`/users/${id}/status`),
-  delete:        (id)     => API.delete(`/users/${id}`),
-  getNotes:      (id)     => API.get(`/users/${id}/notes`),
+  getAll:        (params) => API.get('/api/users', { params }),
+  getOne:        (id)     => API.get(`/api/users/${id}`),
+  updateRole:    (id, role) => API.put(`/api/users/${id}/role`, { role }),
+  toggleStatus:  (id)     => API.patch(`/api/users/${id}/status`),
+  delete:        (id)     => API.delete(`/api/users/${id}`),
+  getNotes:      (id)     => API.get(`/api/users/${id}/notes`),
 };
 
 export default API;
