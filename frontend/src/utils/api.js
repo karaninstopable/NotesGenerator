@@ -34,10 +34,10 @@ API.interceptors.response.use(
 
 // ─── Auth ─────────────────────────────────────────────────────────────────────
 export const authAPI = {
-  register: (data) => API.post('/auth/register', data),
-  login:    (data) => API.post('/auth/login', data),
-  getMe:    ()     => API.get('/auth/me'),
-  updatePassword: (data) => API.put('/auth/password', data),
+  register: (data) => API.post('api/auth/register', data),
+  login:    (data) => API.post('api/auth/login', data),
+  getMe:    ()     => API.get('api/auth/me'),
+  updatePassword: (data) => API.put('api/auth/password', data),
 };
 
 // ─── Notes ────────────────────────────────────────────────────────────────────
