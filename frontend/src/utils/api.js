@@ -40,14 +40,13 @@ export const authAPI = {
   updatePassword: (data) => API.put('api/auth/password', data),
 };
 
-// ─── Notes ────────────────────────────────────────────────────────────────────
 export const notesAPI = {
-  getAll:     (params) => API.get('/notes', { params }),
-  getOne:     (id)     => API.get(`/notes/${id}`),
-  create:     (data)   => API.post('/notes', data),
-  update:     (id, data) => API.put(`/notes/${id}`, data),
-  delete:     (id)     => API.delete(`/notes/${id}`),
-  togglePin:  (id)     => API.patch(`/notes/${id}/pin`),
+  getAll:     (params) => API.get('/api/notes', { params }),
+  getOne:     (id)     => API.get(`/api/notes/${id}`),
+  create:     (data)   => API.post('/api/notes', data),
+  update:     (id, data) => API.put(`/api/notes/${id}`, data),
+  delete:     (id)     => API.delete(`/api/notes/${id}`),
+  togglePin:  (id)     => API.patch(`/api/notes/${id}/pin`),
 };
 
 // ─── Admin Users ──────────────────────────────────────────────────────────────
